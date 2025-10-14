@@ -23,8 +23,8 @@ import (
 	"testing"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/google/battery-historian/csv"
-	usagepb "github.com/google/battery-historian/pb/usagestats_proto"
+	"github.com/sanyen/battery-historian/csv"
+	usagepb "github.com/sanyen/battery-historian/pb/usagestats_proto"
 )
 
 // TestParse tests the generation of CSV entries for activity manager events from the bug report event logs.

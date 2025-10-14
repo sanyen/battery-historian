@@ -27,8 +27,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/battery-historian/historianutils"
-	"github.com/google/battery-historian/packageutils"
+	"github.com/sanyen/battery-historian/historianutils"
+	"github.com/sanyen/battery-historian/packageutils"
 )
 
 const (

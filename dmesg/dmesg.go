@@ -23,9 +23,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/battery-historian/bugreportutils"
-	"github.com/google/battery-historian/csv"
-	"github.com/google/battery-historian/historianutils"
+	"github.com/sanyen/battery-historian/bugreportutils"
+	"github.com/sanyen/battery-historian/csv"
+	"github.com/sanyen/battery-historian/historianutils"
 )
 
 var (

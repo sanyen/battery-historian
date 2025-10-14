@@ -21,8 +21,8 @@ import (
 	"strings"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/google/battery-historian/checkinparse"
-	bspb "github.com/google/battery-historian/pb/batterystats_proto"
+	"github.com/sanyen/battery-historian/checkinparse"
+	bspb "github.com/sanyen/battery-historian/pb/batterystats_proto"
 )
 
 // roundToTwoDecimal rounds off floats to 2 decimal places.
