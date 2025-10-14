@@ -1,5 +1,37 @@
 # Battery Historian
 
+Fork of `gcr.io/android-battery-historian/stable:3.1`.
+
+Key Differences
+
+- Docker configuration files
+- Easily buildable
+- Transparent source
+
+The Docker image is built using **GitHub Actions**.
+
+To run it, instead of:
+
+`docker run -p port_number:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999`
+
+you should run:
+
+`docker run -p port_number:9999 ghcr.io/sanyen/battery-historian --port 9999`
+
+Alternatively, you can build it from source:
+
+1. Clone this repo: `git clone https://github.com/sanyen/battery-historian.git`
+
+2. Navigate to the project directory: `cd battery-historian`
+
+3. Build and run the image: `docker compose up`
+
+4. Open `http://localhost:9999` in your browser
+
+
+
+## Original README
+
 Battery Historian is a tool to inspect battery related information and events on an Android device running Android 5.0 Lollipop (API level 21) and later, while the device was not plugged in. It allows application developers to visualize system and application level events on a timeline with panning and zooming functionality, easily see various aggregated statistics since the device was last fully charged, and select an application and inspect the metrics that impact battery specific to the chosen application. It also allows an A/B comparison of two bugreports, highlighting differences in key battery related metrics.
 
 ## Getting Started
@@ -12,7 +44,7 @@ Run the Battery Historian image. Choose a port number and replace `<port>` with
 that number in the commands below:
 
 ```
-docker -- run -p <port>:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999
+docker -- run -p <port>:9999 ghcr.io/sanyen/battery-historian --port 9999
 ```
 
 For Linux and Mac OS X:
@@ -63,13 +95,13 @@ Next, install Java from <http://www.oracle.com/technetwork/java/javase/downloads
 Next, download the Battery Historian code and its dependencies:
 
 ```
-$ go get -d -u github.com/google/battery-historian/...
+$ go get -d -u github.com/sanyen/battery-historian/...
 ```
 
 Finally, run Battery Historian!
 
 ```
-$ cd $GOPATH/src/github.com/google/battery-historian
+$ cd $GOPATH/src/github.com/sanyen/battery-historian
 
 # Compile Javascript files using the Closure compiler
 $ go run setup.go
@@ -78,10 +110,10 @@ $ go run setup.go
 $ go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ```
 
-Remember, you must always run battery-historian from inside the `$GOPATH/src/github.com/google/battery-historian` directory:
+Remember, you must always run battery-historian from inside the `$GOPATH/src/github.com/sanyen/battery-historian` directory:
 
 ```
-cd $GOPATH/src/github.com/google/battery-historian
+cd $GOPATH/src/github.com/sanyen/battery-historian
 go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ```
 
@@ -271,7 +303,7 @@ $ go run cmd/checkin-delta/local_checkin_delta.go --input=bugreport_1.txt,bugrep
 - G+ Community (Discussion Thread: Battery Historian): https://plus.google.com/b/108967384991768947849/communities/114791428968349268860
 
 If you've found an error in this project, please file an issue:
-<https://github.com/google/battery-historian/issues>
+<https://github.com/sanyen/battery-historian/issues>
 
 ## License
 

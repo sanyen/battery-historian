@@ -1,0 +1,15 @@
+services:
+  battery-historian:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: battery-historian
+    ports:
+      - "9999:9999"
+    volumes:
+      - reports:/reports
+    restart: unless-stopped
+
+volumes:
+  reports:
+
