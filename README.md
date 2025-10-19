@@ -17,7 +17,7 @@ To run it, instead of:
 
 you should run:
 
-`docker run -p port_number:9999 ghcr.io/sanyen/battery-historian --port 9999`
+`docker run -p 9999:9999 ghcr.io/sanyen/battery-historian`
 
 Alternatively, you can build it from source:
 
