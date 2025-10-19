@@ -589,10 +589,7 @@ func ParseBatteryStats(pc checkinutil.Counter, cr *checkinutil.BatteryReport, pk
 		// Parse csv lines according to
 		// frameworks/base/core/java/android/os/BatteryStats.java.
 		parsed, warn, csErrs := parseSection(pc, reportVersion, rawUID, section, remaining, stats, system, apkSeen, &allAppComputedPowerMah)
-		e := false
-		if e, warnings, errs = saveWarningsAndErrors(warnings, warn, errs, csErrs...); e {
-			return nil, warnings, errs
-		}
+		_, warnings, errs = saveWarningsAndErrors(warnings, warn, errs, csErrs...)
 		if !parsed {
 			warnings = append(warnings, fmt.Sprintf("unknown data category %s", section))
 		}
