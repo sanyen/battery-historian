@@ -7,6 +7,7 @@ Key Differences
 - Docker configuration files
 - Easily buildable
 - Transparent source
+- "Self-contained": To avoid breaking, all dependencies have been forked/saved/archived.
 
 The Docker image is built using **GitHub Actions**.
 
@@ -44,7 +45,7 @@ Run the Battery Historian image. Choose a port number and replace `<port>` with
 that number in the commands below:
 
 ```
-docker -- run -p <port>:9999 ghcr.io/sanyen/battery-historian --port 9999
+docker run -p <port>:9999 ghcr.io/sanyen/battery-historian --port 9999
 ```
 
 For Linux and Mac OS X:
