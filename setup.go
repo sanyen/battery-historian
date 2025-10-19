@@ -112,7 +112,10 @@ func main() {
 
 	if _, err := os.Stat(closureLibraryDir); os.IsNotExist(err) {
 		fmt.Println("\nDownloading Closure library...")
-		runCommand("git", "clone", "https://github.com/google/closure-library", closureLibraryDir)
+		runCommand("git", "clone", "https://github.com/sanyen/closure-library", closureLibraryDir)
+
+		fmt.Println("Checking out an older commit for compatibility...")
+	    runCommand("git", "-C", closureLibraryDir, "checkout", "v20170409")
 	}
 
 	_, errD := os.Stat(closureCompilerDir)
@@ -161,7 +164,7 @@ func main() {
 
 	if _, err := os.Stat(axisDir); os.IsNotExist(err) {
 		fmt.Println("\nDownloading 3rd-party JS files...")
-		runCommand("git", "clone", "https://github.com/markrcote/flot-axislabels.git", axisDir)
+		runCommand("git", "clone", "https://github.com/sanyen/flot-axislabels.git", axisDir)
 	}
 
 	fmt.Println("\nGenerating JS runfiles...")
