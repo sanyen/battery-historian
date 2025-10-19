@@ -13,7 +13,7 @@ The Docker image is built using **GitHub Actions**.
 
 To run it, instead of:
 
-`docker run -p port_number:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999`
+`docker run -p 9999:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999`
 
 you should run:
 
